@@ -2,7 +2,7 @@
 
 This repo contains the evaluation code for BASS benchmark for the paper [BASS](https://arxiv.org/abs/2602.04085)
 
-<p style="text-align:center;">Download the BASS Dataset on Huggingface <a href="[https://huggingface.com](https://huggingface.co/datasets/oreva/bass_music_benchmark)">🤗</a></p> 
+<p style="text-align:center;">Download the BASS Dataset on Hugging Face <a href="https://huggingface.co/datasets/oreva/bass_music_benchmark">🤗</a></p>
 
 ## BASS: Benchmarking Audio LMs for Musical Structure and Semantic Reasoning
 Music understanding is a complex task that often requires reasoning over both structural and semantic elements of audio. We introduce BASS, designed to evaluate music understanding and reasoning in audio language models across four broad categories: structural segmentation, lyric transcription, musicological analysis, and artist collaboration. BASS comprises 2658 questions spanning 12 tasks, 1993 unique songs and covering over 138 hours of music from a wide range of genres and tracks, crafted to assess musicological knowledge and reasoning in real-world scenarios. We evaluate 14 open-source and frontier multimodal LMs, finding that even state-of-the-art models struggle on higher-level reasoning tasks such as structural segmentation and artist collaboration, while performing best on lyric transcription. Our analysis reveals that current models leverage linguistic priors effectively but remain limited in reasoning over musical structure, vocal, and musicological attributes. BASS provides an evaluation framework with widespread applications in music recommendation and search and has the potential to guide the development of audio LMs.
