@@ -16,11 +16,7 @@ def run_evaluation(model, output_dir, category):
     outputs = []
     
     # Load dataset based on category
-    if category == 'all':
-        dataset = load_dataset('minjang10/BASS-Music-Bench')
-        questions = [q for cat in dataset for q in cat]
-    else:
-        questions = load_dataset('minjang10/BASS-Music-Bench', split=category)
+    questions = load_dataset('oreva/bass_music_benchmark', split=category)
     
     # Process each question
     for question in questions:

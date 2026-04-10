@@ -48,10 +48,12 @@ NB: This data should only be used for evaluation purposes and not for model trai
 
 ## Download the data
 ```
-from huggingface_hub import snapshot_download
+from datasets import load_dataset
 
-# Download data for all tasks
-snapshot_download(repo_id="oreva/bass", repo_type="dataset", allow_patterns="*.json", local_dir=".")
+ds = load_dataset("oreva/bass_music_benchmark", "lyrics_transcription")
+ds = load_dataset("oreva/bass_music_benchmark", "artist_collaboration")
+ds = load_dataset("oreva/bass_music_benchmark", "structural_segmentation")
+ds = load_dataset("oreva/bass_music_benchmark", "musicological_analysis")
 ```
 
 
