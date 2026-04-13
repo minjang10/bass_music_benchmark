@@ -58,7 +58,8 @@ ds = load_dataset("oreva/bass_music_benchmark", "musicological_analysis")
 
 
 ## Run Evaluation
-Change `model_name` in `run_evaluation.py` to your model
+To run your audio LM on BASS, change `model_name` in `run_evaluation.py` to your model and replace the function `run_inference` with your inference code.
+
 ```
 python run_evaluation.py --category all --output-dir results
 ```
