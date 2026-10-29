@@ -58,28 +58,29 @@ ds = load_dataset("oreva/bass_music_benchmark", "musicological_analysis")
 
 
 ## Run Evaluation
-To run your audio LM on BASS, change `model_name` in `run_evaluation.py` to your model and replace the function `run_inference` with your inference code.
+To run your audio LM on BASS, replace the model loading code in `run_evaluation.py` with your model and the function `run_inference` with your inference code.
+Audio for `structural_segmentation` is included in the dataset; the other categories link to YouTube (`youtube_url`).
 
 ```
 python run_evaluation.py --category all --output-dir results
 ```
 #### Single Task Evaluation
 ```
-python run_evaluation.py --category structural-segmentation --output-dir results
+python run_evaluation.py --category structural_segmentation --output-dir results
 ```
 
 ## Compute Performance
 ```
 python run_metrics.py \
   --structural-segmentation results/structural_segmentation_output.json \
-  --structural-lyrics-transcription results/structural_lyrics_transcription_output.json \
+  --lyrics-transcription results/lyrics_transcription_output.json \
   --artist-collab results/artist_collaboration_output.json \
-  --musicological-analysis results/musicological_analysis.json
+  --musicological-analysis results/musicological_analysis_output.json
 ```
 #### To compute the performance of a single task:
 ```
-python collab_analysis_evaluation.py \
-  --result_file results/artist_collaboration_output.json
+python src/metrics/collab_analysis_evaluation.py \
+  --result-file results/artist_collaboration_output.json
 ```
 Note: Due to the length of the lyrics transcription outputs, computing the metrics may take a long time. To mitigate this, the script we provide for lyrics transcription processes the results concurrently, which may take up compute. 
 
